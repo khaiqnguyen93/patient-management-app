@@ -26,7 +26,7 @@ public class PatientServiceImpl implements PatientService {
 
 	@Override
 	public List<PatientResponse> findAll() {
-		return patientRepository.findAll().stream().map(entity -> {
+		return patientRepository.findAll().stream().filter(entity->!entity.isSoftDeleted()).map(entity -> {
 			return buildResponse(entity);
 		}).collect(Collectors.toList());
 	}

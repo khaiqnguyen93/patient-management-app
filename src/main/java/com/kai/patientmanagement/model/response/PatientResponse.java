@@ -2,6 +2,8 @@ package com.kai.patientmanagement.model.response;
 
 import java.util.Date;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -16,7 +18,8 @@ public class PatientResponse {
 
     private String middleName;
 
-    private Date dob;
+    @JsonFormat(pattern = "yyyy/MM/dd", locale = "en_US")
+    private Date dateOfBirth;
 
     private String gender;
 

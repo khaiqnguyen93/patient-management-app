@@ -26,8 +26,8 @@ public class PatientRequest {
 	private String middleName;
 
 	@NotNull(message = "Please provide a valid date.")
-	@JsonFormat(pattern = "yyyy/MM/dd")
-	private Date dob;
+	@JsonFormat(pattern = "yyyy/MM/dd", locale = "en_US")
+	private Date dateOfBirth;
 
 	@Pattern(regexp = "^[MFO]$", message = "Only M or F or O are accepted.")
 	@NotBlank
