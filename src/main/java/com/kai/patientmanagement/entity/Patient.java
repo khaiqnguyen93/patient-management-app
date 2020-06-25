@@ -5,6 +5,7 @@ import java.util.Date;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 import lombok.Getter;
@@ -16,8 +17,8 @@ import lombok.Setter;
 public class Patient {
 
 	@Id
-	@GeneratedValue
-	private Long patientId;
+	@GeneratedValue(strategy = GenerationType.AUTO)
+	private long patientId;
 
 	@Column(name = "first_name", length = 64)
 	private String firstName;
@@ -35,5 +36,5 @@ public class Patient {
 	private String gender;
 
 	@Column(name = "is_soft_deleted")
-	private Boolean isSoftDeleted;
+	private boolean isSoftDeleted;
 }
